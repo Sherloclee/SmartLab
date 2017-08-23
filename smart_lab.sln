@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smart_lab", "smart_lab.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testEEPROM", "testEEPROM\testEEPROM.vcxproj", "{A3613561-0D08-44D0-BAFD-9D9E87D184A5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testWiFi", "testWiFi\testWiFi.vcxproj", "{326AFA7F-7E54-4840-AE87-3EA215CBE33B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testJson", "testJson\testJson.vcxproj", "{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+		{A3613561-0D08-44D0-BAFD-9D9E87D184A5}.Debug|x86.ActiveCfg = Debug|Win32
+		{A3613561-0D08-44D0-BAFD-9D9E87D184A5}.Debug|x86.Build.0 = Debug|Win32
+		{A3613561-0D08-44D0-BAFD-9D9E87D184A5}.Release|x86.ActiveCfg = Release|Win32
+		{A3613561-0D08-44D0-BAFD-9D9E87D184A5}.Release|x86.Build.0 = Release|Win32
+		{326AFA7F-7E54-4840-AE87-3EA215CBE33B}.Debug|x86.ActiveCfg = Debug|Win32
+		{326AFA7F-7E54-4840-AE87-3EA215CBE33B}.Debug|x86.Build.0 = Debug|Win32
+		{326AFA7F-7E54-4840-AE87-3EA215CBE33B}.Release|x86.ActiveCfg = Release|Win32
+		{326AFA7F-7E54-4840-AE87-3EA215CBE33B}.Release|x86.Build.0 = Release|Win32
+		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Debug|x86.ActiveCfg = Debug|Win32
+		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Debug|x86.Build.0 = Debug|Win32
+		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Release|x86.ActiveCfg = Release|Win32
+		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC1CAE6E-41D7-404D-9DB4-33CAA9BFFCDA}
+	EndGlobalSection
+EndGlobal
