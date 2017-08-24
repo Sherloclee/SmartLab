@@ -3,6 +3,7 @@
 // 
 
 #include "functions.h"
+#include "Light.h"
 #include <ArduinoJson.h>
 #include "WiFi.h"
 
@@ -21,9 +22,19 @@ namespace Ctrl
 	void run(ArduinoJson::JsonObject& json)
 	{
 		String actionCode = json["actionCode"].as<String>();
-
-		Serial.println(actionCode);
-
+		int action = Transform::toINT(actionCode)&(0x00FF);
+		Serial.println(action);
+		switch (action)
+		{
+		case 1:
+			light.on();
+			break;
+		case 0:
+			light.off();
+			break;
+		default:
+			break;
+		}
 	}
 	//消息处理
 
@@ -74,5 +85,23 @@ namespace Transform
 		StaticJsonBuffer<200> jsonBuffer;
 		JsonObject& json = jsonBuffer.parse(str);
 		return json;
+	}
+	int toINT(String hex)
+	{
+		int sum = 0;
+		for (int i = 0;i<hex.length();i++)
+		{
+			sum = sum * 16 + toDig(hex[i]);
+		}
+		return sum;
+	}
+	int toDig(char n)
+	{
+		if ((n >= '0') && (n <= '9'))
+		{
+			return n - 48;
+		}
+		if (isalpha(n))
+			return isupper(n) ? n - 55 : n - 87;
 	}
 }

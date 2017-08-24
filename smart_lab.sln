@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testWiFi", "testWiFi\testWi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testJson", "testJson\testJson.vcxproj", "{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testLight", "testLight\testLight.vcxproj", "{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -33,6 +35,10 @@ Global
 		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Debug|x86.Build.0 = Debug|Win32
 		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Release|x86.ActiveCfg = Release|Win32
 		{F14FE7C1-2059-4EF9-A32B-FF6E06F52681}.Release|x86.Build.0 = Release|Win32
+		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Debug|x86.ActiveCfg = Debug|Win32
+		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Debug|x86.Build.0 = Debug|Win32
+		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Release|x86.ActiveCfg = Release|Win32
+		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

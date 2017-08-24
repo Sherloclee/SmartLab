@@ -13,7 +13,6 @@
 class WiFiClass:public SoftwareSerial
 {
  protected:
-	 String _HandelMessage(String Message);
 	 String m_Server;
 	 String m_port;
 

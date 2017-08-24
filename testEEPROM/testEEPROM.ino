@@ -14,8 +14,8 @@
 #include <EEPROM.h>
 // the setup function runs once when you press reset or power the board
 void setup() {
-	write();
-	//read();
+	//write();
+	read();
 }
 void(*resetFunc) (void) = 0;
 // the loop function runs over and over again until power down or reset
@@ -37,6 +37,7 @@ void write()
 	clearEEPROM();
 	device.setServerAddr("10.66.106.118");
 	device.setDeviceCode("01016191");
+	device.setLabID(01);
 	device.setDeviceID(100);
 	device.setServerPort(8080);
 }
@@ -46,4 +47,9 @@ void read()
 	Serial.begin(9600);
 	DeviceInfoClass device;
 	device.init();
+	Serial.println(device.getDeviceCode());
+	Serial.println(device.getDeviceID());
+	Serial.println(device.getLabID());
+	Serial.println(device.getServerAddr());
+	Serial.println(device.getServerPort());
 }

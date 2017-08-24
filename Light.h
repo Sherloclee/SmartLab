@@ -12,16 +12,17 @@
 class LightClass
 {
  protected:
-	 uint8_t m_input, m_output;
-	 boolean m_status;
-	 boolean m_problem;
+	uint8_t m_input	=5;
+	uint8_t m_output=4;
+	boolean m_status=0;
+	boolean m_problem=0;
 
  public:
-	LightClass(uint8_t input,uint8_t output);
-	void init();
+	LightClass();
+	void init(uint8_t input, uint8_t output);
 	void on();
 	void off();
 };
-
+extern LightClass light;
 #endif
 

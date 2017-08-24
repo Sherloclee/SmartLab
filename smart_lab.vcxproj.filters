@@ -33,6 +33,9 @@
     <ClInclude Include="CmessageHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="__vm\.SmartLab.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>

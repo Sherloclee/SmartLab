@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{326AFA7F-7E54-4840-AE87-3EA215CBE33B}</ProjectGuid>
-    <RootNamespace>testWiFi</RootNamespace>
-    <ProjectName>testWiFi</ProjectName>
+    <ProjectGuid>{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}</ProjectGuid>
+    <RootNamespace>testLight</RootNamespace>
+    <ProjectName>testLight</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -47,8 +47,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\libraries\SoftwareSerial\src;E:\develop\Arduino\libraries\ArduinoJson\src;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\libraries\EEPROM\src;D:\Developer\DevelopementKit\arduino-1.8.2\libraries;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\libraries;E:\develop\Arduino\libraries;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\cores\arduino;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\variants\standard;$(ProjectDir)..\testWiFi;$(ProjectDir)..\..\SmartLab;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\avr\include\;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\avr\include\avr\;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\lib\gcc\avr\4.8.1\include;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\lib\gcc\avr\4.9.2\include;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ProjectDir)__vm\.testWiFi.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>E:\develop\Arduino\libraries\ArduinoJson\src;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\libraries\SoftwareSerial\src;D:\Developer\DevelopementKit\arduino-1.8.2\libraries;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\libraries;E:\develop\Arduino\libraries;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\cores\arduino;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.19\variants\standard;$(ProjectDir)..\testLight;$(ProjectDir)..\..\SmartLab;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\avr\include\;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\avr\include\avr\;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\lib\gcc\avr\4.8.1\include;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\lib\gcc\avr\4.9.2\include;C:\Users\Sherlock Lee\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)__vm\.testLight.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;F_CPU=16000000L;ARDUINO=10802;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -77,25 +77,20 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="testWiFi.ino">
+    <None Include="testLight.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\CmessageHandler.h" />
-    <ClInclude Include="..\WiFi.h" />
-    <ClInclude Include="__vm\.testWiFi.vsarduino.h" />
+    <ClCompile Include="..\functions.cpp" />
+    <ClCompile Include="..\Light.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\CmessageHandler.cpp" />
-    <ClCompile Include="..\WiFi.cpp" />
+    <ClInclude Include="..\functions.h" />
+    <ClInclude Include="..\Light.h" />
+    <ClInclude Include="__vm\.testLight.vsarduino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties arduino.upload.port="COM3" />
-    </VisualStudio>
-  </ProjectExtensions>
 </Project>

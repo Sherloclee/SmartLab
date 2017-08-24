@@ -6,12 +6,14 @@
 #include <EEPROM.h>
 #include "WiFi.h"
 #include <ArduinoJson.h>
+#include <avr/interrupt.h>
 
 #define ON 1
 #define OFF 0
 
+
 extern WiFiClass wifi(10, 11);
-extern LightClass Light(4, 5);
+LightClass light;
 DeviceInfoClass device;
 
 String	serverIP;
@@ -22,8 +24,10 @@ int		mode = 0;
 
 void setup()
 {
+	light.init(5,4);
 	//初始化信息
 	Serial.begin(9600);
+	Serial.println("setup");
 	device.init();
 	serverIP	= device.getServerAddr();
 	serverPort	= device.getServerPort();
@@ -37,8 +41,8 @@ void setup()
 	
 	while (!Serial);
 	//启用定时中断
-	MsTimer2::set(10000, heartpack);
-	MsTimer2::start();
+	//MsTimer2::set(10000, heartpack);
+	//MsTimer2::start();
 }
 
 void loop()
@@ -63,7 +67,15 @@ void loop()
 		ArduinoJson::JsonObject& json = Transform::strParsing(message);
 		type = json["type"].as<String>();
 		if (type == "action")
+		{
 			Ctrl::run(json);
+		}
+		if (type == "recvheart")
+		{
+			;
+		}
+
+			
 	}
 	delay(2);
 }
@@ -83,3 +95,5 @@ void heartpack()
 	wifi.Send(Heart);
 	Serial.println(Heart);
 }
+
+//{"type":"action","deviceCode":"010161901","actionCode":"0101","time":"170820185620"}

@@ -25,6 +25,8 @@ namespace Transform
 	using ArduinoJson::JsonObject;
 	String Prosess(String str);
 	JsonObject& strParsing(String str);
+	int toDig(char n);
+	int toINT(String hex);
 }
 #endif
 
