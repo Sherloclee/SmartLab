@@ -14,8 +14,8 @@
 #include <EEPROM.h>
 // the setup function runs once when you press reset or power the board
 void setup() {
-	//write();
-	read();
+	write();
+	//read();
 }
 void(*resetFunc) (void) = 0;
 // the loop function runs over and over again until power down or reset

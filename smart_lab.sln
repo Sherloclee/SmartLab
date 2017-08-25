@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testJson", "testJson\testJs
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testLight", "testLight\testLight.vcxproj", "{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testDelay", "testDelay\testDelay.vcxproj", "{4FDF5983-1EC6-4173-9B0B-20E21B56F71D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -39,6 +41,10 @@ Global
 		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Debug|x86.Build.0 = Debug|Win32
 		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Release|x86.ActiveCfg = Release|Win32
 		{ACEBAE0D-8306-44BC-A7AC-36CC72AAEBEB}.Release|x86.Build.0 = Release|Win32
+		{4FDF5983-1EC6-4173-9B0B-20E21B56F71D}.Debug|x86.ActiveCfg = Debug|Win32
+		{4FDF5983-1EC6-4173-9B0B-20E21B56F71D}.Debug|x86.Build.0 = Debug|Win32
+		{4FDF5983-1EC6-4173-9B0B-20E21B56F71D}.Release|x86.ActiveCfg = Release|Win32
+		{4FDF5983-1EC6-4173-9B0B-20E21B56F71D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

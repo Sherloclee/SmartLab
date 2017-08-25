@@ -10,7 +10,7 @@
 
 #define ON 1
 #define OFF 0
-
+#define NOP do{__asm__ __volatile__("nop");}while(0)
 
 extern WiFiClass wifi(10, 11);
 LightClass light;
@@ -21,6 +21,7 @@ int		serverPort;
 String	deviceCode;
 int		deviceID;
 int		mode = 0;
+int		time;
 
 void setup()
 {
@@ -43,16 +44,33 @@ void setup()
 	//启用定时中断
 	//MsTimer2::set(10000, heartpack);
 	//MsTimer2::start();
+	time = millis()/1000;
 }
 
 void loop()
 {
+	if ((millis()/1000)-time >= 10)
+	{
+		time = millis()/1000;
+		Serial.println(millis()/1000);
+		heartpack(time);
+		for (int i = 0; i < 500;i++)
+		{
+			Ctrl::delay_(10);
+			if (wifi.available())
+			{
+				Ctrl::WifiRead();
+				break;
+			}
+		}
+
+	}
 	if (Serial.available())
 	{
 		String message;
 		String type;
 		message = Ctrl::SerialRead();
-		Serial.println(message.begin());
+		Serial.println(message);
 		ArduinoJson::JsonObject& json = Transform::strParsing(message);
 		type = json["type"].as<String>();
 		if (type == "setting")
@@ -68,20 +86,14 @@ void loop()
 		type = json["type"].as<String>();
 		if (type == "action")
 		{
-			Ctrl::run(json);
+			Ctrl::run(json,wifi);
 		}
-		if (type == "recvheart")
-		{
-			;
-		}
-
-			
 	}
 	delay(2);
 }
 
 //心跳包
-void heartpack()
+void heartpack(int time)
 {
 	String Heart;
 	String json;
@@ -89,11 +101,14 @@ void heartpack()
 	JsonObject& object = jsonBuffer.createObject();
 	object["type"] = "heart";
 	object["deviceCode"] = deviceCode;
-	object["time"] = String(millis()/1000);
+	object["time"] = String(time);
 	object.printTo(Heart);
 	Heart = "<"+Heart+">";
 	wifi.Send(Heart);
 	Serial.println(Heart);
 }
 
-//{"type":"action","deviceCode":"010161901","actionCode":"0101","time":"170820185620"}
+//<{"type":"action","deviceCode":"010161901","actionCode":"0101","time":"20"}>
+//<{"type":"recvAction","deviceCode":"0101","actionCode":"0101","result":0,"time":"20"}>
+//<{"type":"heart","deviceCode":"01016191","time":"20"}>
+//<{"type":"recvheart","deviceCode":"01016191","time":"20"}>

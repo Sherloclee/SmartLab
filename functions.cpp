@@ -6,7 +6,7 @@
 #include "Light.h"
 #include <ArduinoJson.h>
 #include "WiFi.h"
-
+#define NOP do{__asm__ __volatile__("nop");}while(0)
 namespace Ctrl
 {
 	//与计算机连接进行调试
@@ -19,7 +19,7 @@ namespace Ctrl
 		int	m_LabID			= json["Lab_ID"].as<int>();
 	}
 	//正常运行
-	void run(ArduinoJson::JsonObject& json)
+	void run(ArduinoJson::JsonObject& json,WiFiClass wifi)
 	{
 		String actionCode = json["actionCode"].as<String>();
 		int action = Transform::toINT(actionCode)&(0x00FF);
@@ -28,9 +28,11 @@ namespace Ctrl
 		{
 		case 1:
 			light.on();
+			wifi.Send("<{\"type\":\"recvAction\",\"result\":\"1\"}>");
 			break;
 		case 0:
 			light.off();
+			wifi.Send("<{\"type\":\"recvAction\",\"result\":\"1\"}>");
 			break;
 		default:
 			break;
@@ -54,6 +56,15 @@ namespace Ctrl
 	String WifiRead()
 	{
 		return wifi.Recv();
+	}
+
+	void delay_(int n)
+	{
+		for (; n >0;n--)
+			for (int i = 0; i < 3180; i++)
+			{
+				NOP;
+			}
 	}
 }
 

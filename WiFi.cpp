@@ -142,7 +142,7 @@ int WiFiClass::connectSocket(String server,int port)
 	Serial.println(WiFiMessage.begin());
 	if(WiFiMessage == "OK\r")
 		return 1;
-	return 1;
+	return 0;
 }
 //set ServerIP
 void WiFiClass::setServer(String server)
@@ -194,9 +194,8 @@ String WiFiClass::Recv()
 	while (available())
 	{
 		WiFiMessage = WiFiMessage + char(read());
-		delay(1);
+		delay(2);
 	}
-	flush();
 	WiFiMessage = Transform::Prosess(WiFiMessage);
 	return WiFiMessage;
 }
